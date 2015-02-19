@@ -1,7 +1,7 @@
 FROM boritzio/docker-mesosphere-base
 
-ADD start_chronos.sh /usr/sbin/chronos
+RUN apt-get install -y chronos
 
 EXPOSE 4400
 
-ENTRYPOINT /usr/sbin/chronos
+ADD start_chronos.sh /etc/my_init.d/chronos.sh
