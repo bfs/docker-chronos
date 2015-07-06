@@ -15,14 +15,14 @@ docker run --restart=always --name chronos -p 8081:8081 -m 1g -e MESOS_ZK=zk://p
   "id": "chronos",
   "container": {
     "type": "DOCKER",
-    "forcePullImage": true,
     "docker": {
       "image": "boritzio/docker-chronos",
+      "forcePullImage": true,
       "network": "HOST",
       "parameters": [
         { "key": "env", "value": "MESOS_ZK=zk://pet100:2181,pet110:2181,pet120:2181/mesos" },
         { "key": "env", "value": "CHRONOS_ZK=pet100:2181,pet110:2181,pet120:2181" },
-        { "key": "env", "value": "MAIL_SERVER=smtp.myco.com" },
+        { "key": "env", "value": "MAIL_SERVER=smtp.myco.com:25" },
         { "key": "env", "value": "MAIL_FROM=chronos.tasks@myco.com" }
       ]
     }

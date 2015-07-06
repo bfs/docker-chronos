@@ -20,5 +20,7 @@ if [ -n $MAIL_SSL ]; then
   ARGS="$ARGS --mail_ssl"
 fi
 
+echo "Starting with args: $ARGS"
+
 [ -n "$HOST" ] && LIBPROCESS_IP=$HOST
 java -Xmx512m -Djava.library.path=/usr/local/lib:/usr/lib64:/usr/lib -cp /usr/bin/chronos org.apache.mesos.chronos.scheduler.Main $ARGS
