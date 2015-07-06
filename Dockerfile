@@ -1,6 +1,6 @@
 FROM boritzio/docker-mesosphere-base
 
-RUN apt-get update; apt-get install -y chronos
+RUN apt-get install -y chronos
 
 EXPOSE 4400
 
